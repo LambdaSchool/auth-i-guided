@@ -10,6 +10,7 @@
     "seed": "knex seed:run"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "connect-session-knex": "^2.1.0",
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
