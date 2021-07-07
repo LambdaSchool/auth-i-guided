@@ -11,7 +11,7 @@ const checkPayload = (req,res,next)=>{
 }
 
 
-router.post("/register",checkPayload, (req,res)=>{
+router.post("/register",checkPayload,checkUserInDB, (req,res)=>{
     
 })
 
