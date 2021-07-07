@@ -49,7 +49,11 @@ router.post("/register",checkPayload,checkUserInDB, async (req,res)=>{
 })
 
 router.post("/login",checkPayload,checkUserExists, (req,res)=>{
-    console.log("logging in")
+    try{
+
+    }catch(e){
+        res.status(500).json({message:e.message})
+    }
 })
 
 router.get("/logout", (req,res)=>{
