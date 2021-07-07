@@ -10,6 +10,14 @@ const checkPayload = (req,res,next)=>{
     }
 }
 
+const checkUserInDB = async (req,res,next)=>{
+    try{
+
+    }catch(e){
+        res.status(500).json(`Server error: ${e.message}`)
+    }
+}
+
 
 router.post("/register",checkPayload,checkUserInDB, (req,res)=>{
     
