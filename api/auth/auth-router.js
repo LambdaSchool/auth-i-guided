@@ -29,7 +29,7 @@ router.post("/register",checkPayload,checkUserInDB, (req,res)=>{
     try{
         const hash = bcrypt.hashSync(req.body.password,10)
     }catch(e){
-
+        res.status(500).json({message:e.message})
     }
 })
 
