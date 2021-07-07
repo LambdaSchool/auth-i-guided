@@ -27,7 +27,8 @@ const checkUserInDB = async (req,res,next)=>{
 const checkUserExists = async (req,res,next)=>{
     try{
         const rows = await User.findBy({username:req.body.username})
-        if(!rows.length){
+        if(rows.length){
+            req.userData = rows[0]
             next()
         }else{
             res.status(401).json("Username already exists")
