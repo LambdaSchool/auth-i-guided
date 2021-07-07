@@ -13,6 +13,7 @@ const checkPayload = (req,res,next)=>{
 const checkUserInDB = async (req,res,next)=>{
     try{
         const user = await User.findBy({username:req.body.username})
+        console.log(user)
     }catch(e){
         res.status(500).json(`Server error: ${e.message}`)
     }
