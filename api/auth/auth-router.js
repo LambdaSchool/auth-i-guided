@@ -1,8 +1,17 @@
 const express = require("express")
 const router = express.Router()
 
-router.post("/register", (req,res)=>{
-    console.log("registering")
+const checkPayload = (req,res,next)=>{
+    if(!req.body.username || !req.body.password){
+        res.status(401).json("Username and password required")
+    }else{
+        next()
+    }
+}
+
+
+router.post("/register",checkPayload, (req,res)=>{
+    
 })
 
 router.post("/login", (req,res)=>{
