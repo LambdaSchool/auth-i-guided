@@ -2,6 +2,7 @@ const express = require("express")
 const router = express.Router()
 const User = require("../users/users-model.js")
 const bcrypt = require("bcryptjs")
+const session = require("express-session")
 
 const checkPayload = (req,res,next)=>{
     if(!req.body.username || !req.body.password){
