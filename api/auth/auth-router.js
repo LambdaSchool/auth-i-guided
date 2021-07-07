@@ -27,9 +27,9 @@ const checkUserInDB = async (req,res,next)=>{
 
 router.post("/register",checkPayload,checkUserInDB, (req,res)=>{
     try{
-
+        const hash = bcrypt.hashSync(req.body.password,10)
     }catch(e){
-        
+
     }
 })
 
