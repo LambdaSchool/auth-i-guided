@@ -26,7 +26,11 @@ const checkUserInDB = async (req,res,next)=>{
 
 
 router.post("/register",checkPayload,checkUserInDB, (req,res)=>{
-    
+    try{
+
+    }catch(e){
+        
+    }
 })
 
 router.post("/login", (req,res)=>{
