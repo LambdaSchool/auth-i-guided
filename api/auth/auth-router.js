@@ -25,9 +25,10 @@ const checkUserInDB = async (req,res,next)=>{
 }
 
 
-router.post("/register",checkPayload,checkUserInDB, (req,res)=>{
+router.post("/register",checkPayload,checkUserInDB, async (req,res)=>{
     try{
         const hash = bcrypt.hashSync(req.body.password,10)
+        const newUser = await User.add({username:req.body.username, password:hash})
     }catch(e){
         res.status(500).json({message:e.message})
     }
