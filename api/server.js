@@ -18,7 +18,14 @@ const config = {
     httpOnly: true
   },
   resave:false,
-  saveUnitialized:false
+  saveUnitialized:false,
+  store: new KnexSessionStore({
+    knex:require("../database/db-config.js"),
+    tablename:"sessions",
+    sidfieldname:"sid",
+    createTable:true,
+    clearInterval:1000 * 60 * 60
+  })
 }
 
 server.use(express.static(path.join(__dirname, '../client')));
